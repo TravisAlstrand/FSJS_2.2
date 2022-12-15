@@ -24,13 +24,12 @@ ul {
   width: 95%;
 }
 
-
-
 header {
   text-align: center;
 	display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 	padding: 2em 0;
 }
 
@@ -43,8 +42,6 @@ header h2 {
 	margin-bottom: 25px;
 }
 
-
-
 .student-search {
   display: flex;
 }
@@ -55,6 +52,7 @@ header h2 {
   border: 1px solid rgb(30, 144, 255);
   padding: 10px 16px;
   font-size: 14px;
+  margin-top: .5rem;
 }
 
 .student-search input::placeholder {
@@ -71,13 +69,12 @@ header h2 {
   font-size: 14px;
   background-color: #1e90ff;
   color: #fff;
+  margin-top: .5rem;
 }
 
 .student-search button img {
   width: 25px;
 }
-
-
 
 .student-list {
   display: grid;
@@ -141,8 +138,6 @@ header h2 {
   margin-top: 1.1em;
 }
 
-
-
 .pagination {
   margin: 30px 0 60px;
   text-align: center;
@@ -165,11 +160,26 @@ header h2 {
 	color: #1e90ff;
 	box-shadow: 0 1px 8px 0 rgba(22, 42, 90, 0.05);
 	transition: 0.4s;
+  margin-top: .5rem;
 }
 
 .pagination li button.active, .pagination li button:hover {
   background-color: #1e90ff;
   color: #fff;
+}
+
+.select-div {
+  width: fit-content;
+}
+
+#perPage {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(30, 144, 255);
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-bottom: .5rem;
+  text-align: center;
 }
 
 
@@ -183,8 +193,6 @@ header h2 {
   overflow: hidden;
 }
 
-
-
 .no-results {
 	font-family: 'Nunito', sans-serif;
 	display: block;
@@ -195,7 +203,9 @@ header h2 {
 	margin-bottom: 15px;
 }
 
-
+.hidden {
+  display: none;
+}
 
 @media screen and (min-width: 700px) {
 
@@ -204,18 +214,23 @@ header h2 {
 	}
 	
 	header {
-		flex-flow: row;
-		align-items: center;
 		padding: 3em 0;
-	}
-	
-	header h2 {
-    margin-right: auto;
-		margin-bottom: 0;
 	}
 
 	.student-item {
 		border-radius: 5px;
 		box-shadow: 0 4px 16px 0 rgba(22, 42, 90, 0.09);
 	}
+}
+
+@media (min-width: 1000px) {
+  header {
+    flex-flow: row;
+    align-items: flex-start;
+  }
+
+  .student-search input,
+  .student-search button {
+    margin-top: 0;
+  }
 }
